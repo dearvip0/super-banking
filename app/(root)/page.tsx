@@ -12,6 +12,12 @@ const Home = async () => {
   //   userId: loggedIn.$id,
   // });
 
+    const loggedIn = {
+      firstName: "Adrian",
+      lastName: "Gonzalez",
+      email: "adrian.gonzalez",
+    };
+
   return (
     <section className="home">
       <div className="home-content">
@@ -22,11 +28,15 @@ const Home = async () => {
             user={"Guest"}
             subtext="Access and manage your account and transactions efficiently"
           />
-          <TotalBalanceBox accounts={[]} totalBanks={1} totalCurrentBalance={1250} />
+          <TotalBalanceBox
+            accounts={[]}
+            totalBanks={1}
+            totalCurrentBalance={1250}
+          />
         </header>
         RecentTransactions
       </div>
-      <RightSidebar />
+      <RightSidebar user={loggedIn} transactions={[]} banks={[123, 321]} />
     </section>
   );
 };
